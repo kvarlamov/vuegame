@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue Game</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<div id="app"> 
+  <h1>Hello!</h1>
+  <p>Welcome to training day {{trainingday}}.</p>
+  <p>Your last score - solved {{solved}} from 25</p>
+  <p>Overall Accuracy {{accuracy}}%</p>
+  <br><br><br>
+  <h3>Settings</h3>
+  <input type="range" min="1" max="10" v-model="duration" value="{{duration}}" class="slider" id="myRange">
+  <p>Duration {{duration}} minutes</p>
+  <input type="range" min="1" max="15" v-model="complexity" value="{{complexity}}" class="slider" id="myRange">
+  <p>Сomplexity {{complexity}}</p>
+  <br><br>  
+  <input type="checkbox" value="Summation" v-model="selectedOperations">
+  <label>Summation</label><br>
+  <input type="checkbox" value="Difference" v-model="selectedOperations">
+  <label>Difference</label><br>
+  <input type="checkbox" value="Multiplication" v-model="selectedOperations">
+  <label>Multiplication</label><br>
+  <input type="checkbox" value="Division" v-model="selectedOperations">
+  <label>Division</label><br>
+  <input type="checkbox" value="Exponentiation" v-model="selectedOperations">
+  <label>Exponentiation</label><br>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+
+new Vue({
+    el:'#app',
+    data: { 
+        trainingday: 24,
+        solved: 10,
+        accuracy: 80,
+        duration: 7,
+        complexity: 5,
+        selectedOperations: []
+    }
+})
+</script>
+</body>
+</html>
